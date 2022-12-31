@@ -33,6 +33,7 @@ const RenderPokemon = async (pokemon) =>{
         nome.innerHTML = data.name
         id.innerHTML   = ` ID:${data.id}`
         busca = data.id
+        imagem.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
 
         console.log(data.types['0'].type['name'])
         if(data.types['0'].type['name'] === 'grass'){
@@ -87,7 +88,7 @@ const RenderPokemon = async (pokemon) =>{
             tipo.src = 'imagens/steel.png'
         }
         //IMG
-        imagem.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
+        
     }else{
         RenderPokemon('1')
         document.getElementById('conteudo-modal').innerHTML = 'Infelizmente não foi possível encontrar esse pokemon... Mas não desista!!! <i class="fa-solid fa-flower-tulip"></i>'
