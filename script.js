@@ -1,3 +1,4 @@
+//Pegando os elementos
 const nome = document.getElementById('elemento_nome')
 const id = document.getElementById('id')
 const imagem = document.getElementById('imagem')
@@ -10,6 +11,7 @@ let tipo = document.getElementById('tipo_pokemon')
 
 let busca = 1
 
+//Fazendo a requisição para a API
 const fecthPokemon = async (pokemon) => {
     const APIresposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
     console.log(APIresposta)
@@ -21,6 +23,7 @@ const fecthPokemon = async (pokemon) => {
     }
 }
 
+//gerando e colocando os dados
 const RenderPokemon = async (pokemon) =>{
     nome.innerHTML = 'Loading...'
     id.innerHTML = ''
@@ -83,11 +86,7 @@ const RenderPokemon = async (pokemon) =>{
         else if (data.types['0'].type['name'] === 'steel'){
             tipo.src = 'imagens/steel.png'
         }
-        
-        
-        
-        
-
+        //IMG
         imagem.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
     }else{
         RenderPokemon('1')
@@ -101,13 +100,13 @@ const RenderPokemon = async (pokemon) =>{
         let botao = document.getElementById('btn-modal')
         botao.innerHTML = 'Voltar e tentar de novo'
         botao.className = 'btn btn-success'
-        $('#modal-sucesso-erro').modal('show')
+        $('#modal-sucesso-erro').modal('show')//Modal
         
     }
 }
 
 
-
+//Adicionando o evento de enviar na tag form
 form.addEventListener('submit', (event) =>{
 
     event.preventDefault()
@@ -116,7 +115,7 @@ form.addEventListener('submit', (event) =>{
     input.value = ''
 
 })
-
+//Evento click nos BTNs
 btn_prev.addEventListener('click',() =>{
     if (busca > 1){
         busca -=1
@@ -130,5 +129,5 @@ btn_next.addEventListener('click',() =>{
     RenderPokemon(busca)
 } )
 
-
+//Pokemon 1 como padrão ao recarregar
 RenderPokemon('1')
