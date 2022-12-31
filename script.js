@@ -65,6 +65,25 @@ const RenderPokemon = async (pokemon) =>{
         else if (data.types['0'].type['name'] === 'psychic'){
             tipo.src = 'imagens/psychic.png'
         }
+        else if (data.types['0'].type['name'] === 'rock'){
+            tipo.src = 'imagens/rock.png'
+        }
+        else if (data.types['0'].type['name'] === 'ghost'){
+            tipo.src = 'imagens/ghost.png'
+        }
+        else if (data.types['0'].type['name'] === 'ice'){
+            tipo.src = 'imagens/ice.png'
+        }
+        else if (data.types['0'].type['name'] === 'dragon'){
+            tipo.src = 'imagens/dragon.png'
+        }
+        else if (data.types['0'].type['name'] === 'dark'){
+            tipo.src = 'imagens/dark.png'
+        }
+        else if (data.types['0'].type['name'] === 'steel'){
+            tipo.src = 'imagens/steel.png'
+        }
+        
         
         
         
