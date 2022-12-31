@@ -6,6 +6,8 @@ const btn_prev = document.getElementById('btn-prev')
 const btn_next = document.getElementById('btn-next')
 
 
+let tipo = document.getElementById('tipo_pokemon')
+
 let busca = 1
 
 const fecthPokemon = async (pokemon) => {
@@ -19,9 +21,6 @@ const fecthPokemon = async (pokemon) => {
     }
 }
 
-
-
-
 const RenderPokemon = async (pokemon) =>{
     nome.innerHTML = 'Loading...'
     id.innerHTML = ''
@@ -29,13 +28,62 @@ const RenderPokemon = async (pokemon) =>{
 
     if (data){
         nome.innerHTML = data.name
-        id.innerHTML   = data.id
+        id.innerHTML   = ` ID:${data.id}`
         busca = data.id
+
+        console.log(data.types['0'].type['name'])
+        if(data.types['0'].type['name'] === 'grass'){
+            tipo.src = 'imagens/bush.png'
+        }
+        else if (data.types['0'].type['name'] === 'fire'){
+            tipo.src = 'imagens/fire.png'
+        }
+        else if (data.types['0'].type['name'] === 'electric'){
+            tipo.src = 'imagens/eletric.png'
+        }
+        else if (data.types['0'].type['name'] === 'bug'){
+            tipo.src = 'imagens/bug.png'
+        }
+        else if (data.types['0'].type['name'] === 'water'){
+            tipo.src = 'imagens/water.png'
+        }
+        else if (data.types['0'].type['name'] === 'poison'){
+            tipo.src = 'imagens/poison.png'
+        }
+        else if (data.types['0'].type['name'] === 'normal'){
+            tipo.src = 'imagens/normal.png'
+        }
+        else if (data.types['0'].type['name'] === 'ground'){
+            tipo.src = 'imagens/ground.png'
+        }
+        else if (data.types['0'].type['name'] === 'fairy'){
+            tipo.src = 'imagens/fairy.png'
+        }
+        else if (data.types['0'].type['name'] === 'fighting'){
+            tipo.src = 'imagens/fighting.png'
+        }
+        else if (data.types['0'].type['name'] === 'psychic'){
+            tipo.src = 'imagens/psychic.png'
+        }
+        
+        
+        
+
         imagem.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
     }else{
-        imagem.style.display = 'none'
-        nome.innerHTML = 'Not Found :('
-        id.innerHTML   = 0
+        RenderPokemon('1')
+        document.getElementById('conteudo-modal').innerHTML = 'Infelizmente não foi possível encontrar esse pokemon... Mas não desista!!! <i class="fa-solid fa-flower-tulip"></i>'
+        //titulo
+        let titulo = document.getElementById('exampleModalLabel')
+        titulo.innerHTML = 'NÃO ENCONTRADO :('
+        titulo.classList.add('text-danger')
+
+        //btn
+        let botao = document.getElementById('btn-modal')
+        botao.innerHTML = 'Voltar e tentar de novo'
+        botao.className = 'btn btn-success'
+        $('#modal-sucesso-erro').modal('show')
+        
     }
 }
 
