@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: 'Oxanium', cursive;
+}
+
+body{
+    text-align: center;
+    background-image:   linear-gradient(to right, #fff, #0000FF);
+}
+
+main{
+    display: inline-block;
+    margin-top: 3%;
+    text-align: center;
+}
+
+
+#nome{
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    font-size: 25px;
+}
+
+#pokedex{
+    position: absolute;
+    left: 40%;
+    height: 80%;
+ 
+}
+
+#btn-prev{
+    border-radius: 5px;
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    background-color: #444444;
+    color: white;
+    border-left: 3px solid #222222;
+    border-bottom:3px solid #222222; ;
+    box-shadow: -2px 2px 1px 1px black;
+    
+
+    top: 73%;
+    left: 43%;
+}
+
+#btn-prev:active{
+    box-shadow: inset -4px 4px 1px 1px black;
+}
+
+#btn-next{
+    border-radius: 5px;
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    background-color: #444444;
+    color: white;
+    border-left: 3px solid #222222;
+    border-bottom:3px solid #222222; 
+    box-shadow: -2px 2px 1px 1px black;
+
+    top: 73%;
+    left: 52.5%;
+}
+
+#btn-next:active{
+    box-shadow: inset -4px 4px 1px 1px black;
+}
+
+
+#id{
+    color: gray;
+}
+
+#imagem{
+    width: 100px;
+    z-index: 1;
+    position: absolute;
+    top: 32%;
+    left: 48%;
+}
+
+#input{
+    position: absolute;
+    top: 56%;
+    left: 42%;
+
+    border-left: 3px solid #222222;
+    border-bottom:3px solid #222222; 
+    border-radius: 5px;
+    box-shadow: -2px 4px 1px 1px gray;
+    padding: 8px;
+    width: 250px;
+    margin-top: 20px;
+}
+
+
+
+@media (max-width: 575.98px) { 
+    #pokedex{
+        position: absolute;
+        left: 10%;
+        top: 0%;
+        height: 80%;
+        margin-bottom: 50px;
+    }
+
+    #btn-prev{
+        top: 68%;
+        left: 20%;
+    }
+    
+    #btn-next{
+        top:68%;
+        left: 56%;
+    }
+    
+    #imagem{
+        top: 28%;
+        left: 40%;
+    }
+
+    #nome{
+        top: 44%;
+        left: 42%;
+        font-size: 22px;
+    }
+
+    #input{
+        position: absolute;
+        top: 50%;
+        left: 20%;
+    }
+
+    body{
+        background-color: rgb(83, 83, 218);
+    }
+
+    main{
+        display: inline;
+    }
+    
+ }
+
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+ }
+
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+
+ }
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+
+ }
+
+
+@media (min-width: 1200px) { 
+
+}
